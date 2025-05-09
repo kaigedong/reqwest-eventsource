@@ -2,7 +2,7 @@
 name = "reqwest-eventsource"
 version = "0.6.0"
 authors = ["Julian Popescu <jpopesculian@gmail.com>"]
-edition = "2018"
+edition = "2024"
 resolver = "2"
 license = "MIT OR Apache-2.0"
 readme = "README.md"
@@ -11,21 +11,28 @@ documentation = "https://docs.rs/reqwest-eventsource/"
 repository = "https://github.com/jpopesculian/reqwest-eventsource"
 description = "Helper to build an Eventsource using reqwest"
 keywords = ["sse", "eventsource", "reqwest", "stream", "event"]
-categories = ["web-programming::http-client", "no-std", "parsing", "asynchronous"]
+categories = [
+    "web-programming::http-client",
+    "no-std",
+    "parsing",
+    "asynchronous",
+]
 
 [dependencies]
-eventsource-stream = "0.2.3"
-reqwest = { version = "0.12.0", default-features = false, features = ["stream"] }
-futures-core = "0.3.5"
-pin-project-lite = "0.2.8"
-nom = "7.1.0"
-mime = "0.3.16"
-futures-timer = "3.0.2"
-thiserror = "1.0.30"
+eventsource-stream = { git = "https://github.com/kaigedong/eventsource-stream.git" }
+reqwest = { version = "0.12.15", default-features = false, features = [
+    "stream",
+] }
+futures-core = "0.3.31"
+pin-project-lite = "0.2.16"
+nom = "8.0.0"
+mime = "0.3.17"
+futures-timer = "3.0.3"
+thiserror = "2.0"
 
 [dev-dependencies]
-futures = "0.3.5"
-tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
-futures-retry = "0.6"
-pin-utils = "0.1"
-rocket = "0.5.0"
+futures = "0.3.31"
+tokio = { version = "1.45.0", features = ["macros", "rt-multi-thread"] }
+futures-retry = "0.6.0"
+pin-utils = "0.1.0"
+rocket = "0.5.1"
